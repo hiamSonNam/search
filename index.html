@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tufy music player</title>
+       
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/ebdbf5f47d.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./app.css" />
+    <link rel="stylesheet" href="./footer.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="sidebar">
+        <div class="profile">
+          <img
+            src=""
+            alt=""
+            class="profile-avatar"
+          />
+          <span class="profile-position">Listen ours music</span>
+        </div>
+        <ul class="menu">
+          <li class="menu-item">
+            <a href="./index.html" class="menu-link  active">
+                <i class="fa fa-home menu-icon"></i><span>Home</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="./artist.html" class="menu-link">
+              <i class="fa fa-user menu-icon"></i><span>Artist</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="./genre.html" class="menu-link">
+              <i class="fa fa-list menu-icon"></i><span>Genre</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="menu-link">
+              <i class="fa fa-play menu-icon"></i><span>Videos</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="main">
+        <div class="header">
+          <!-- them search -->
+          <form id="search" action="search" method="GET" style="width: 100%">
+            <div class="search">
+              <input type="text" name="keyword" placeholder="Tìm kiếm bài hát..." class="search-input"/>
+                <button style="background-color: transparent;
+                border: none;"><i class="search-icon fa fa-search" id="searchBtn"></i></button>
+            </div>
+          </form>
+        </div>
+        <div class="content">
+          <div class="content-item">
+            <div class="block-box">
+              <h2 class="heading">Danh sách bài hát</h2>
+            </div>
+            <div id="song-list">
+              <!-- render here -->
+            </div>
+          </div>
+
+          <div class="content-item">
+            <div class="block-box">
+              <h2 class="heading">Đang phát</h2>
+            </div>
+
+            <div class="player">
+              <div class="player-box">
+                <div class="player-media">
+                  <img
+                    alt=""
+                    class="player-image"
+                    src=""
+                  />
+                </div>
+                <h3 class="player-title title"></h3>
+                <span class="player-author author"></span>
+                <div class="progress">
+                  <input
+                      type="range"
+                      id="progress-bar"
+                      min="0"
+                      max=""
+                      value="0"
+                      class="bar"
+                  />
+                  <audio src="" id="song"></audio>
+                </div>
+
+                <div class="player-tool">
+                  <i class="fa fa-random player-random btn"></i>
+                  <i class="fa fa-backward player-prev btn"></i>
+                  <i class="fa fa-play fa-solid player-play btn"></i>
+                  <i class="fa fa-forward player-next btn"></i>
+                  <i class="fa fa-refresh player-repeat btn"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer">
+      <div class="info">
+        <div class="contact">
+          <div class="fullyItem">
+            Sign up for the newest song from Tufy
+          </div>
+          <div class="fullyItem">
+            <button> <i class="fa-regular fa-envelope"></i> STAY UP TO DATE</button>
+          </div>
+        </div>
+
+        <div class="socialNetwork">
+          <div class="item">
+            <i class="fa-brands fa-facebook"></i>
+            <div>Facebook</div>
+          </div>
+          <div class="item">
+            <i class="fa-brands fa-instagram"></i>
+            <div>Instagram</div>
+          </div> 
+          <div class="item">
+            <i class="fa-brands fa-youtube"></i>
+            <div>Youtube</div>
+          </div> 
+          <div class="item">
+            <i class="fa-brands fa-twitter"></i>
+            <div>Twitter</div>
+          </div>
+
+          <div class="item">
+            <i class="fa-brands fa-tiktok"></i>
+            <div>Tiktok</div>
+          </div>
+
+          <div class="item">
+            <i class="fa-brands fa-spotify"></i>
+            <div>Spotify</div>
+          </div>
+
+          <div class="item">
+            <i class="fa-brands fa-pinterest"></i>
+            <div>Printerest</div>
+          </div>
+        </div>
+
+        <div class="address">
+          <h2>Tufy SoftWare </h2>
+          <h4>Ho Chi Minh</h4>
+          <h4>0999999999</h4>
+        </div>
+      </div>
+
+      <div class="copyRight">
+        <div class="copyRight--content">
+          <h6 style="margin-bottom: 0;">TUFY AG 2022</h6>
+          <p>Note: All songs are no-copyright. You can use them for unbusiness purpose.</p>
+        </div>
+
+        <div class="slogan">
+          <h1>Listen ours music</h1>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
