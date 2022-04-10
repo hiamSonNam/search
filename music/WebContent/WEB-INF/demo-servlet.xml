@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+						
+		http://www.springframework.org/schema/mvc
+		
+		http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+						
+		http://www.springframework.org/schema/context
+						
+		http://www.springframework.org/schema/context/spring-context.xsd
+		
+		http://www.springframework.org/schema/jdbc 
+		
+		http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd">
+
+	<mvc:annotation-driven />
+	<mvc:resources location="/assets/" mapping="/assets/**" />
+
+	<context:component-scan
+		base-package="vn.music.Controller, vn.music.API" />
+	<mvc:default-servlet-handler />
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver"></property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/music"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value=""></property>
+	</bean>
+
+	<bean id="JdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<bean id="song" class="vn.music.DAO.SongDAO">
+		<property name="JdbcTemplate" ref="JdbcTemplate" />
+	</bean>
+
+	<bean id="cate" class="vn.music.DAO.CategoryDAO">
+		<property name="JdbcTemplate" ref="JdbcTemplate" />
+	</bean>
+
+	<bean id="artist" class="vn.music.DAO.ArtistDAO">
+		<property name="JdbcTemplate" ref="JdbcTemplate" />
+	</bean>
+
+	<bean id="service" class="vn.music.Service.HomeServiceImpl">
+		<!-- <property name="JdbcTemplate" ref="JdbcTemplate" /> -->
+	</bean>
+
+	<bean id="fillSongByArtist"
+		class="vn.music.Service.FillSongByArtistServiceImpl">
+		<!-- <property name="JdbcTemplate" ref="JdbcTemplate" /> -->
+	</bean>
+
+	<bean id="fillSongByCate"
+		class="vn.music.Service.FillSongByCategoryServiceImpl">
+		<!-- <property name="JdbcTemplate" ref="JdbcTemplate" /> -->
+	</bean>
+	
+	<bean id="artistService"
+		class="vn.music.Service.ArtistServiceImpl">
+		<!-- <property name="JdbcTemplate" ref="JdbcTemplate" /> -->
+	</bean>
+	
+	<bean id="paginateService"
+		class="vn.music.Service.PaginateServiceImpl">
+		<!-- <property name="JdbcTemplate" ref="JdbcTemplate" /> -->
+	</bean>
+
+</beans>

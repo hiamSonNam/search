@@ -1,0 +1,75 @@
+:root{
+    --primary_violet: #070d50;
+    --primary_color: #a4adc8;
+    --primary_background: #fefefc;
+    --secondary_color: #d3d3d3;
+}
+
+#artist-list{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-gap: 30px;
+    padding: 30px;
+    max-height: 455px;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#artist-list::-webkit-scrollbar {
+    display: none;
+}
+
+.artist{
+    padding: 10px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.artist:hover .artist-image{
+    z-index: 100;
+    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.artist-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 12px;
+    margin: 0 auto 10px auto;
+    transition: all .5s ease;
+}
+  
+.artist-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--primary_violet);
+    line-height: 1.4;
+    text-align: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
