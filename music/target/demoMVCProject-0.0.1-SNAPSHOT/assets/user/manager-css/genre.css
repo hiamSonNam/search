@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+/* st */
+:root{
+    --primary_violet: #070d50;
+    --primary_color: #a4adc8;
+    --primary_background: #fefefc;
+    --secondary_color: #d3d3d3;
+}
+
+.x:hover{
+	background-color:  var(--primary_violet);
+}
+
+.x:hover h3{
+	color: var(--secondary_color);
+}

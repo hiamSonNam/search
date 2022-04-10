@@ -1,0 +1,120 @@
+.footer{
+    width: 100%;
+    color: #a4adc8;
+}
+
+.info{
+    width: 100%;
+    padding: 20px;
+    background-color: #070d50;
+    display: grid;
+    grid-template-columns: 30% 45% 25%;
+}
+
+.contact{
+    color: #a4adc8;
+    display: grid;
+}
+
+.contact .fullyItem{
+    margin-bottom: 20px;
+}
+
+.contact .fullyItem button{
+    background-color: #919191;
+    color: #fff;
+    padding: 20px;
+    border: none;
+    font-weight: 1000;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.contact .fullyItem button:hover{
+    background-color: #a4adc8;
+}
+
+.socialNetwork{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-right: 70px;
+    align-items: center;
+}
+
+.socialNetwork .item{
+    display: flex;
+    text-align: center;
+    height: 30px;
+    justify-items: baseline;
+    margin: 0 auto 20px 0;
+    font-weight: 500;
+}
+
+.socialNetwork .item:hover, 
+.direct h4:hover,
+.address h2:hover, 
+.address h4:hover{
+    color: #fff;
+    cursor: pointer;
+}
+
+.socialNetwork .item i{
+    width: 30px;
+}
+
+.address h2, 
+.address h4{
+    margin-bottom: 30px;
+}
+
+.copyRight{
+    margin-top: 0;
+    position: relative;
+    padding: 30px 0 20px 20px;
+}
+
+.slogan{
+    position: absolute;
+    top: 10px;
+    right: 35px;
+    color: #070d50;
+}
+
+.slogan hr {
+    position: absolute;
+    bottom: -10px;
+    height: 4px;
+    width: 100%;
+    background-color: #070d50;
+    border: none;
+}
+
+.copyRight--content{
+    width: 50%;
+    color: #919191;
+}
+
+.copyRight--content p{
+    font-size: 15px;
+}
+
+@media screen and (max-width: 720px) and (min-width: 520px){
+    .info{
+        grid-template-columns: 45% 55%;
+    }
+}
+
+@media screen and (max-width: 519px) {
+    .info, .copyRight{
+        display: block;
+    }
+
+    .address, .contact, .socialNetwork{
+        max-width: 310px;
+        margin: 0 auto;
+    }   
+
+    .copyRight{
+        padding: 50px 20px 20px;
+    }
+}
